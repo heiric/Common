@@ -1,51 +1,24 @@
 name: Common
-main: Common\MainClass
+main: Common\Main
 version: 1.1.0
 api: 3.0.0
 
 author: Eric
 description: Convenience Commands/Events
-commands:
-  hello:
-    description: Greet the server!
-    usage: /hello
-    permission: common.hello
-  gms:
-    description: Set gamemode to Survival
-    usage: /gms [player]
-    permission: common.gms
-  gmc:
-    description: Set gamemode to Creative
-    usage: /gmc [player]
-    permission: common.gmc
-  gma:
-    description: Set gamemode to Adventure
-    usage: /gma [player]
-    permission: common.gma
-  gmspc:
-    description: Set gamemode to Spectator
-    usage: /gmspc [player]
-    permission: common.gmspc
-  tpo:
-    description: Teleport a player to you
-    usage: /tpo <player>
-    permission: common.tpo
+
 permissions:
-  common.hello:
-    description: Permission for /hello
-    default: true
+  common.tpo:
+    description: Permission for /tpo
+    default: op
   common.gms:
-    description: Permission for /gms
+    description: Permission for /tpo
     default: op
   common.gmc:
-    description: Permission for /gmc
+    description: Permission for /tpo
     default: op
   common.gma:
-    description: Permission for /gma
+    description: Permission for /tpo
     default: op
   common.gmspc:
-    description: Permission for /gmspc
-    default: op
-  common.tpo:
     description: Permission for /tpo
     default: op
