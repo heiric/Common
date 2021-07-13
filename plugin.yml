@@ -12,23 +12,23 @@ commands:
     permission: common.hello
   gms:
     description: Set gamemode to Survival
-    usage: /gms
+    usage: /gms [player]
     permission: common.gms
   gmc:
     description: Set gamemode to Creative
-    usage: /gmc
+    usage: /gmc [player]
     permission: common.gmc
   gma:
     description: Set gamemode to Adventure
-    usage: /gma
+    usage: /gma [player]
     permission: common.gma
   gmspc:
     description: Set gamemode to Spectator
-    usage: /gmspc
+    usage: /gmspc [player]
     permission: common.gmspc
   tpo:
     description: Teleport a player to you
-    usage: /tpo
+    usage: /tpo <player>
     permission: common.tpo
 permissions:
   common.hello:

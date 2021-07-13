@@ -31,9 +31,27 @@ class MainClass extends PluginBase {
                     $sender->sendMessage("§cYou do not have permission to use this command!");
                     return true;
                 }
-                $sender->setGamemode(0);
-                $sender->sendMessage("§aYour gamemode has been set to Survival");
-                return true;
+
+                if (!isset($args[0])) {
+                    $sender->setGamemode(0);
+                    $sender->sendMessage("§aYour gamemode has been set to Survival");
+                    return true;
+                } else {
+                    $player = Server::getInstance()->getPlayer(implode(" ", $args));
+                    if (!$player) {
+                        $sender->sendMessage("§cPlayer not found!");
+                        return true;
+                    }
+                    if ($player->getDisplayName() == $sender->getDisplayName()) {
+                        $sender->setGamemode(0);
+                        $sender->sendMessage("§aYour gamemode has been set to Survival");
+                        return true;
+                    }
+                    $name = $player->getDisplayName();
+                    $player->setGamemode(0);
+                    $sender->sendMessage("§a{$name}'s gamemode has been set to Survival!");
+                    return true;
+                }
             case "gmc":
                 if (!$sender instanceof Player) {
                     $sender->sendMessage("§cThis command can only be used in-game!");
@@ -43,9 +61,27 @@ class MainClass extends PluginBase {
                     $sender->sendMessage("§cYou do not have permission to use this command!");
                     return true;
                 }
-                $sender->setGamemode(1);
-                $sender->sendMessage("§aYour gamemode has been set to Creative");
-                return true;
+
+                if (!isset($args[0])) {
+                    $sender->setGamemode(1);
+                    $sender->sendMessage("§aYour gamemode has been set to Creative");
+                    return true;
+                } else {
+                    $player = Server::getInstance()->getPlayer(implode(" ", $args));
+                    if (!$player) {
+                        $sender->sendMessage("§cPlayer not found!");
+                        return true;
+                    }
+                    if ($player->getDisplayName() == $sender->getDisplayName()) {
+                        $sender->setGamemode(1);
+                        $sender->sendMessage("§aYour gamemode has been set to Creative");
+                        return true;
+                    }
+                    $name = $player->getDisplayName();
+                    $player->setGamemode(1);
+                    $sender->sendMessage("§a{$name}'s gamemode has been set to Creative!");
+                    return true;
+                }
             case "gma":
                 if (!$sender instanceof Player) {
                     $sender->sendMessage("§cThis command can only be used in-game!");
@@ -55,9 +91,27 @@ class MainClass extends PluginBase {
                     $sender->sendMessage("§cYou do not have permission to use this command!");
                     return true;
                 }
-                $sender->setGamemode(2);
-                $sender->sendMessage("§aYour gamemode has been set to Adventure");
-                return true;
+
+                if (!isset($args[0])) {
+                    $sender->setGamemode(2);
+                    $sender->sendMessage("§aYour gamemode has been set to Adventure");
+                    return true;
+                } else {
+                    $player = Server::getInstance()->getPlayer(implode(" ", $args));
+                    if (!$player) {
+                        $sender->sendMessage("§cPlayer not found!");
+                        return true;
+                    }
+                    if ($player->getDisplayName() == $sender->getDisplayName()) {
+                        $sender->setGamemode(2);
+                        $sender->sendMessage("§aYour gamemode has been set to Adventure");
+                        return true;
+                    }
+                    $name = $player->getDisplayName();
+                    $player->setGamemode(2);
+                    $sender->sendMessage("§a{$name}'s gamemode has been set to Adventure!");
+                    return true;
+                }
             case "gmspc":
                 if (!$sender instanceof Player) {
                     $sender->sendMessage("§cThis command can only be used in-game!");
@@ -67,9 +121,27 @@ class MainClass extends PluginBase {
                     $sender->sendMessage("§cYou do not have permission to use this command!");
                     return true;
                 }
-                $sender->setGamemode(3);
-                $sender->sendMessage("§aYour gamemode has been set to Spectator");
-                return true;
+
+                if (!isset($args[0])) {
+                    $sender->setGamemode(3);
+                    $sender->sendMessage("§aYour gamemode has been set to Spectator");
+                    return true;
+                } else {
+                    $player = Server::getInstance()->getPlayer(implode(" ", $args));
+                    if (!$player) {
+                        $sender->sendMessage("§cPlayer not found!");
+                        return true;
+                    }
+                    if ($player->getDisplayName() == $sender->getDisplayName()) {
+                        $sender->setGamemode(3);
+                        $sender->sendMessage("§aYour gamemode has been set to Spectator");
+                        return true;
+                    }
+                    $name = $player->getDisplayName();
+                    $player->setGamemode(3);
+                    $sender->sendMessage("§a{$name}'s gamemode has been set to Spectator!");
+                    return true;
+                }
             case "tpo":
                 if(!$sender instanceof Player) {
                     $sender->sendMessage("§cThis command can only be used in-game!");
