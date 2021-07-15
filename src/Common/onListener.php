@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Common;
 
 use pocketmine\event\Listener;
+use pocketmine\event\player\PlayerExhaustEvent;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\player\PlayerQuitEvent;
@@ -19,6 +20,10 @@ class onListener implements Listener {
         $this->plugin = $plugin;
     }
 
+    public function onExhaust(PlayerExhaustEvent $event) : void {
+        $event->setCancelled(true);
+    }
+
     public function onFallDamage(EntityDamageEvent $event) : void {
         if ($event->getCause(4)) {
             $event->setCancelled(true);
@@ -28,6 +33,8 @@ class onListener implements Listener {
     public function onJoin(PlayerJoinEvent $event) : void {
         $player = $event->getPlayer();
         $name = $player->getDisplayName();
+
+        $player->setHealth(20);
         $event->setJoinMessage("§8[§a+§8] {$name}");
         $player->teleport($player->getLevel()->getSpawnLocation());
     }
