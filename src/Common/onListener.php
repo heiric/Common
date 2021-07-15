@@ -35,6 +35,7 @@ class onListener implements Listener {
         $name = $player->getDisplayName();
 
         $player->setHealth(20);
+        $player->setFood(20);
         $event->setJoinMessage("§8[§a+§8] {$name}");
         $player->teleport($player->getLevel()->getSpawnLocation());
     }
